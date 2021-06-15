@@ -1,0 +1,40 @@
+ncverilog(64): 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	ncverilog	15.20-s039: Started on Jun 15, 2021 at 21:36:00 CST
+ncverilog
+	fft.v
+	-c
+Recompiling... reason: file './FIR.v' is newer than expected.
+	expected: Mon Jun 14 14:53:28 2021
+	actual:   Tue Jun 15 20:39:20 2021
+file: fft.v
+	module worklib.fft:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.counter:v <0x20abc220>
+			streams:   3, words:   799
+		worklib.fft:v <0x192ae8f8>
+			streams:  70, words: 34396
+		worklib.fft_stage1:v <0x7fd112a4>
+			streams:   1, words:  5256
+		worklib.fft_stage2:v <0x78edeac4>
+			streams:   1, words:  6412
+		worklib.fft_stage3:v <0x494d69cf>
+			streams:   1, words:  5356
+		worklib.fft_stage4:v <0x7ff12baf>
+			streams:   1, words:  4909
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		               Instances  Unique
+		Modules:               6       6
+		Registers:           222     222
+		Scalar wires:          3       -
+		Vectored wires:      130       -
+		Always blocks:         9       9
+		Pseudo assignments:   64      64
+	Writing initial simulation snapshot: worklib.fft:v
+TOOL:	ncverilog	15.20-s039: Exiting on Jun 15, 2021 at 21:36:01 CST  (total: 00:00:01)
