@@ -57,3 +57,18 @@ s56(15Jun2021:21:34:49):  ncverilog fft.v -c
 s57(15Jun2021:21:35:35):  ncverilog fft_stage4.v -c 
 s58(15Jun2021:21:35:38):  ncverilog fft.v -c 
 s59(15Jun2021:21:36:00):  ncverilog fft.v -c 
+s60(15Jun2021:23:22:40):  ncverilog analyze.v -c 
+s61(15Jun2021:23:23:14):  ncverilog analyze.v -c 
+s62(15Jun2021:23:23:51):  ncverilog analyze.v -c 
+s63(15Jun2021:23:24:07):  ncverilog analyze.v -c 
+s64(15Jun2021:23:25:49):  ncverilog analyze.v -c 
+s65(15Jun2021:23:27:03):  ncverilog analyze.v -c 
+s66(15Jun2021:23:27:14):  ncverilog analyze.v -c 
+s67(15Jun2021:23:27:37):  ncverilog analyze.v -c 
+s68(15Jun2021:23:35:52):  ncverilog FAS.v 
+s69(15Jun2021:23:35:54):  ncverilog FAS.v -c 
+s70(15Jun2021:23:36:26):  ncverilog FAS.v -c 
+s71(15Jun2021:23:36:47):  ncverilog fir.v -c 
+s72(15Jun2021:23:41:03):  ncverilog fir.v -c 
+s73(15Jun2021:23:41:33):  ncverilog fir.v -c 
+s74(15Jun2021:23:41:36):  ncverilog FAS.v -c 

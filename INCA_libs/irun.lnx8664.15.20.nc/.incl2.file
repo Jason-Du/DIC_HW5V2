@@ -1,3 +1,11 @@
+fir.v
+/home/khduh/DIC_HW5/fir.v
+counter.v
+/home/khduh/DIC_HW5/counter.v
+tree_adder.v
+/home/khduh/DIC_HW5/tree_adder.v
+fft.v
+/home/khduh/DIC_HW5/fft.v
 fft_stage1.v
 /home/khduh/DIC_HW5/fft_stage1.v
 fft_stage2.v
@@ -6,3 +14,7 @@ fft_stage3.v
 /home/khduh/DIC_HW5/fft_stage3.v
 fft_stage4.v
 /home/khduh/DIC_HW5/fft_stage4.v
+analyze.v
+/home/khduh/DIC_HW5/analyze.v
+counter_4.v
+/home/khduh/DIC_HW5/counter_4.v

@@ -5,7 +5,7 @@
 -XLMODE
 ./INCA_libs/irun.lnx8664.15.20.nc
 -RUNMODE
-fft.v
+FAS.v
 -CDSLIB
 ./INCA_libs/irun.lnx8664.15.20.nc/cdsrun.lib
 -HDLVAR
