@@ -1,9 +1,10 @@
-1623321957 /home/khduh/DIC_HW5/tree_adder.v
-1623762198 /home/khduh/DIC_HW5/fft_stage1.v
+1624281603 /home/khduh/DIC_HW5/tree_adder.v
+1624299503 /home/khduh/DIC_HW5/fft_stage1.v
 1623762320 /home/khduh/DIC_HW5/fft_stage2.v
 1623755716 /home/khduh/DIC_HW5/fft_stage3.v
 1623764130 /home/khduh/DIC_HW5/fft_stage4.v
-1623764158 /home/khduh/DIC_HW5/fft.v
+1624299542 /home/khduh/DIC_HW5/fft.v
 1623770856 /home/khduh/DIC_HW5/analyze.v
 1623771385 /home/khduh/DIC_HW5/FAS.v
-1623771692 /home/khduh/DIC_HW5/fir.v
+1624284264 /home/khduh/DIC_HW5/fir.v
+1624267393 /home/khduh/DIC_HW5/testfixture1.v

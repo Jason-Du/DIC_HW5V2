@@ -82,22 +82,22 @@ module fft(
 	.keep(FFT_C0_keep)
 );
     fft_stage1 FFt_S1(
-		.stage1_data0_in(stage0_register_in[0]),
-		.stage1_data1_in(stage0_register_in[1]),
-		.stage1_data2_in(stage0_register_in[2]),
-		.stage1_data3_in(stage0_register_in[3]),
-		.stage1_data4_in(stage0_register_in[4]),
-		.stage1_data5_in(stage0_register_in[5]),
-		.stage1_data6_in(stage0_register_in[6]),
-		.stage1_data7_in(stage0_register_in[7]),
-		.stage1_data8_in(stage0_register_in[8]),
-		.stage1_data9_in(stage0_register_in[9]),
-		.stage1_data10_in(stage0_register_in[10]),
-		.stage1_data11_in(stage0_register_in[11]),
-		.stage1_data12_in(stage0_register_in[12]),
-		.stage1_data13_in(stage0_register_in[13]),
-		.stage1_data14_in(stage0_register_in[14]),
-		.stage1_data15_in(stage0_register_in[15]),
+		.stage1_data0_in(stage0_register_in[15]),
+		.stage1_data1_in(stage0_register_in[14]),
+		.stage1_data2_in(stage0_register_in[13]),
+		.stage1_data3_in(stage0_register_in[12]),
+		.stage1_data4_in(stage0_register_in[11]),
+		.stage1_data5_in(stage0_register_in[10]),
+		.stage1_data6_in(stage0_register_in[9]),
+		.stage1_data7_in(stage0_register_in[8]),
+		.stage1_data8_in(stage0_register_in[7]),
+		.stage1_data9_in(stage0_register_in[6]),
+		.stage1_data10_in(stage0_register_in[5]),
+		.stage1_data11_in(stage0_register_in[4]),
+		.stage1_data12_in(stage0_register_in[3]),
+		.stage1_data13_in(stage0_register_in[2]),
+		.stage1_data14_in(stage0_register_in[1]),
+		.stage1_data15_in(stage0_register_in[0]),
 
 		.stage1_data0_out(stage1_register_in[0]),
 		.stage1_data1_out(stage1_register_in[1]),
@@ -272,21 +272,21 @@ module fft(
 		*/
 		////////////////////////////////////////////////
 		 fft_d0=stage4_register_out[0];
-		 fft_d0=stage4_register_out[1]; 
-		 fft_d0=stage4_register_out[2]; 
-		 fft_d0=stage4_register_out[3]; 
-		 fft_d0=stage4_register_out[4]; 
-		 fft_d0=stage4_register_out[5]; 
-		 fft_d0=stage4_register_out[6]; 
-		 fft_d0=stage4_register_out[7]; 
-		 fft_d0=stage4_register_out[8];
-		 fft_d0=stage4_register_out[9];
-		 fft_d0=stage4_register_out[10]; 
-		 fft_d0=stage4_register_out[11]; 
-		 fft_d0=stage4_register_out[12]; 
-		 fft_d0=stage4_register_out[13]; 
-		 fft_d0=stage4_register_out[14]; 
-		 fft_d0=stage4_register_out[15]; 
+		 fft_d1=stage4_register_out[1]; 
+		 fft_d2=stage4_register_out[2]; 
+		 fft_d3=stage4_register_out[3]; 
+		 fft_d4=stage4_register_out[4]; 
+		 fft_d5=stage4_register_out[5]; 
+		 fft_d6=stage4_register_out[6]; 
+		 fft_d7=stage4_register_out[7]; 
+		 fft_d8=stage4_register_out[8];
+		 fft_d9=stage4_register_out[9];
+		 fft_d10=stage4_register_out[10]; 
+		 fft_d11=stage4_register_out[11]; 
+		 fft_d12=stage4_register_out[12]; 
+		 fft_d13=stage4_register_out[13]; 
+		 fft_d14=stage4_register_out[14]; 
+		 fft_d15=stage4_register_out[15]; 
 
 	end
 	always@(*)
@@ -296,19 +296,19 @@ module fft(
 			IDLE:
 			begin
 				NS=fir_valid?FIRST_DATA:IDLE;
-				FFT_C0_clear=1'b1;
+				FFT_C0_clear=fir_valid?1'b1:1'b0;
 				fft_valid=1'b0;
 			end
 			FIRST_DATA:
 			begin
-				NS=(FFT_C0_count==10'd19)?END:FIRST_DATA;
-				FFT_C0_clear=(FFT_C0_count==10'd20)?1'b1:1'b0;
-				fft_valid=(FFT_C0_count==10'd19)?1'b1:1'b0;
+				NS=(FFT_C0_count==10'd18)?END:FIRST_DATA;
+				FFT_C0_clear=(FFT_C0_count==10'd18)?1'b1:1'b0;
+				fft_valid=(FFT_C0_count==10'd18)?1'b1:1'b0;
 			end
 			END:
 			begin
 				NS=(FFT_C0_count==10'd1007)?IDLE:END;
-				fft_valid=(FFT_C0_count[2:0]==3'b000)?1'b1:1'b0;
+				fft_valid=((FFT_C0_count[3:0]+4'd1)==4'b0000&&FFT_C0_count!=10'd0)?1'b1:1'b0;
 				FFT_C0_clear=(FFT_C0_count==10'd1007)?1'b1:1'b0;
 			end
 			default:

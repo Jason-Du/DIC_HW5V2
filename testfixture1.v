@@ -5,7 +5,7 @@
 
 `define fir_fail_limit 48
 `define fft_fail_limit 48
-
+`include "FAS.v"
 
 
 module testfixture1;
@@ -14,7 +14,7 @@ reg   clk ;
 reg   reset ;
 reg [15:0] data; // 4 integer + 4 fraction
 wire fir_valid, fft_valid;
-wire [15:0] fir_d; // 8 integer + 8 fraction
+wire signed [15:0] fir_d; // 8 integer + 8 fraction
 wire [31:0] fft_d0, fft_d1, fft_d2, fft_d3, fft_d4, fft_d5, fft_d6, fft_d7, fft_d8;
 wire [31:0] fft_d9, fft_d10, fft_d11, fft_d12, fft_d13, fft_d14, fft_d15;
 wire ready;
@@ -29,7 +29,7 @@ reg en;
 reg [15:0] data_mem [0:1023];
 initial $readmemh("./dat/Pattern1.dat", data_mem);
 
-reg [15:0] fir_mem [0:1023];
+reg signed [15:0] fir_mem [0:1023];
 initial $readmemh("./dat/Golden1_FIR.dat", fir_mem);
 
 reg [15:0] fftr_mem [0:1023];
@@ -52,6 +52,7 @@ FAS DUT(.data_valid(en), .data(data), .clk(clk), .rst(reset), .fir_d(fir_d), .fi
 
 initial begin
 $fsdbDumpfile("FAS.fsdb");
+$fsdbDumpvars("+struct", "+mda",DUT);
 $fsdbDumpvars;
 end
 
@@ -139,11 +140,11 @@ fft_rec[14] = fft_d14;
 fft_rec[15] = fft_d15;
 end
 
-reg [15:0] fft_cmp_r , fft_cmp_r1 , fft_cmp_r2 , fft_cmp_r3 ,fft_cmp_i , fft_cmp_i1 , fft_cmp_i2 , fft_cmp_i3 ;
-reg [15:0] fft_cmp_r4 , fft_cmp_r5 , fft_cmp_r6, fft_cmp_r7, fft_cmp_i4 , fft_cmp_i5 , fft_cmp_i6, fft_cmp_i7 ;
-reg [15:0] fftr_ver, ffti_ver;
-reg [15:0] fftr_ver_, ffti_ver_;
-reg [31:0] fft_cmp;
+reg signed [15:0] fft_cmp_r , fft_cmp_r1 , fft_cmp_r2 , fft_cmp_r3 ,fft_cmp_i , fft_cmp_i1 , fft_cmp_i2 , fft_cmp_i3 ;
+reg signed [15:0] fft_cmp_r4 , fft_cmp_r5 , fft_cmp_r6, fft_cmp_r7, fft_cmp_i4 , fft_cmp_i5 , fft_cmp_i6, fft_cmp_i7 ;
+reg signed [15:0] fftr_ver, ffti_ver;
+reg signed [15:0] fftr_ver_, ffti_ver_;
+reg signed [31:0] fft_cmp;
 
 reg fftr_verify, ffti_verify;
 always@(posedge clk) begin

@@ -1,4 +1,3 @@
-0000      //Pattern 3, data input stream 0: 000
 0118      //Pattern 3, data input stream 1: 1.093750e+000
 01D4      //Pattern 3, data input stream 2: 1.828125e+000
 01F6      //Pattern 3, data input stream 3: 1.960938e+000
@@ -1022,3 +1021,4 @@ FE8D      //Pattern 3, data input stream 1020: -1.449219e+000
 FE0A      //Pattern 3, data input stream 1021: -1.960938e+000
 FE2C      //Pattern 3, data input stream 1022: -1.828125e+000
 FEE8      //Pattern 3, data input stream 1023: -1.093750e+000
+0000      //Pattern 3, data input stream 1024: 000

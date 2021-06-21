@@ -44,6 +44,8 @@ parameter signed [19:0] FIR_C28 = 20'h0003B ;    //The FIR_coefficient value 28:
 parameter signed [19:0] FIR_C29 = 20'hFFFA7 ;     //The FIR_coefficient value 29: -1.358032e-003
 parameter signed [19:0] FIR_C30 = 20'hFFF86 ;     //The FIR_coefficient value 30: -1.861572e-003
 parameter signed [19:0] FIR_C31 = 20'hFFF9E ;     //The FIR_coefficient value 31: -1.495361e-003
+
+
 input clk;
 input rst;
 input data_valid;
@@ -54,7 +56,8 @@ output reg  fir_valid;
 
 reg signed [15:0] dff_register    [30:0];
 reg signed [15:0] dff_register_in [30:0];
-reg signed [27:0] mult_value      [31:0];
+//reg signed [27:0] mult_value      [31:0];
+reg signed [35:0] mult_value      [31:0];
 reg signed [15:0] data_stage2;
 integer i;
 localparam IDLE =2'b00;
@@ -146,85 +149,88 @@ begin
 		dff_register_in[i+1]=dff_register[i];
 	end
 end
+
 always@(*)
 begin
-	mult_value[0]=$signed(dff_register_in[0])*$signed(FIR_C00[19:8]);
-	mult_value[1]=$signed(dff_register_in[1])*$signed(FIR_C01[19:8]);
-	mult_value[2]=$signed(dff_register_in[2])*$signed(FIR_C02[19:8]);
-	mult_value[3]=$signed(dff_register_in[3])*$signed(FIR_C03[19:8]);
-	mult_value[4]=$signed(dff_register_in[4])*$signed(FIR_C04[19:8]);
+	mult_value[0]=$signed(dff_register_in[0])*$signed(FIR_C00);
+	mult_value[1]=$signed(dff_register_in[1])*$signed(FIR_C01);
+	mult_value[2]=$signed(dff_register_in[2])*$signed(FIR_C02);
+	mult_value[3]=$signed(dff_register_in[3])*$signed(FIR_C03);
+	mult_value[4]=$signed(dff_register_in[4])*$signed(FIR_C04);
 	
-	mult_value[5]=$signed(dff_register_in[5])*$signed(FIR_C05[19:8]);
-	mult_value[6]=$signed(dff_register_in[6])*$signed(FIR_C06[19:8]);
-	mult_value[7]=$signed(dff_register_in[7])*$signed(FIR_C07[19:8]);
-	mult_value[8]=$signed(dff_register_in[8])*$signed(FIR_C08[19:8]);
-	mult_value[9]=$signed(dff_register_in[9])*$signed(FIR_C09[19:8]);
+	mult_value[5]=$signed(dff_register_in[5])*$signed(FIR_C05);
+	mult_value[6]=$signed(dff_register_in[6])*$signed(FIR_C06);
+	mult_value[7]=$signed(dff_register_in[7])*$signed(FIR_C07);
+	mult_value[8]=$signed(dff_register_in[8])*$signed(FIR_C08);
+	mult_value[9]=$signed(dff_register_in[9])*$signed(FIR_C09);
 	
-	mult_value[10]=$signed(dff_register_in[10])*$signed(FIR_C10[19:8]);
-	mult_value[11]=$signed(dff_register_in[11])*$signed(FIR_C11[19:8]);
-	mult_value[12]=$signed(dff_register_in[12])*$signed(FIR_C12[19:8]);
-	mult_value[13]=$signed(dff_register_in[13])*$signed(FIR_C13[19:8]);
-	mult_value[14]=$signed(dff_register_in[14])*$signed(FIR_C14[19:8]);
+	mult_value[10]=$signed(dff_register_in[10])*$signed(FIR_C10);
+	mult_value[11]=$signed(dff_register_in[11])*$signed(FIR_C11);
+	mult_value[12]=$signed(dff_register_in[12])*$signed(FIR_C12);
+	mult_value[13]=$signed(dff_register_in[13])*$signed(FIR_C13);
+	mult_value[14]=$signed(dff_register_in[14])*$signed(FIR_C14);
 	
-	mult_value[15]=$signed(dff_register_in[15])*$signed(FIR_C15[19:8]);
-	mult_value[16]=$signed(dff_register_in[16])*$signed(FIR_C16[19:8]);
-	mult_value[17]=$signed(dff_register_in[17])*$signed(FIR_C17[19:8]);
-	mult_value[18]=$signed(dff_register_in[18])*$signed(FIR_C18[19:8]);
-	mult_value[19]=$signed(dff_register_in[19])*$signed(FIR_C19[19:8]);
+	mult_value[15]=$signed(dff_register_in[15])*$signed(FIR_C15);
+	mult_value[16]=$signed(dff_register_in[16])*$signed(FIR_C16);
+	mult_value[17]=$signed(dff_register_in[17])*$signed(FIR_C17);
+	mult_value[18]=$signed(dff_register_in[18])*$signed(FIR_C18);
+	mult_value[19]=$signed(dff_register_in[19])*$signed(FIR_C19);
 	
-	mult_value[20]=$signed(dff_register_in[20])*$signed(FIR_C20[19:8]);
-	mult_value[21]=$signed(dff_register_in[21])*$signed(FIR_C21[19:8]);
-	mult_value[22]=$signed(dff_register_in[22])*$signed(FIR_C22[19:8]);
-	mult_value[23]=$signed(dff_register_in[23])*$signed(FIR_C23[19:8]);
-	mult_value[24]=$signed(dff_register_in[24])*$signed(FIR_C24[19:8]);
+	mult_value[20]=$signed(dff_register_in[20])*$signed(FIR_C20);
+	mult_value[21]=$signed(dff_register_in[21])*$signed(FIR_C21);
+	mult_value[22]=$signed(dff_register_in[22])*$signed(FIR_C22);
+	mult_value[23]=$signed(dff_register_in[23])*$signed(FIR_C23);
+	mult_value[24]=$signed(dff_register_in[24])*$signed(FIR_C24);
 	
-	mult_value[25]=$signed(dff_register_in[25])*$signed(FIR_C25[19:8]);
-	mult_value[26]=$signed(dff_register_in[26])*$signed(FIR_C26[19:8]);
-	mult_value[27]=$signed(dff_register_in[27])*$signed(FIR_C27[19:8]);
-	mult_value[28]=$signed(dff_register_in[28])*$signed(FIR_C28[19:8]);
-	mult_value[29]=$signed(dff_register_in[29])*$signed(FIR_C29[19:8]);
+	mult_value[25]=$signed(dff_register_in[25])*$signed(FIR_C25);
+	mult_value[26]=$signed(dff_register_in[26])*$signed(FIR_C26);
+	mult_value[27]=$signed(dff_register_in[27])*$signed(FIR_C27);
+	mult_value[28]=$signed(dff_register_in[28])*$signed(FIR_C28);
+	mult_value[29]=$signed(dff_register_in[29])*$signed(FIR_C29);
 	
-	mult_value[30]=$signed(dff_register_in[30])*$signed(FIR_C30[19:8]);
-	mult_value[31]=$signed(dff_register   [30])*$signed(FIR_C31[19:8]);
+	mult_value[30]=$signed(dff_register_in[30])*$signed(FIR_C30);
+	mult_value[31]=$signed(dff_register   [30])*$signed(FIR_C31);
 
 end
-tree_adder T0(
-.add1(mult_value[0][23:8]),
-.add2(mult_value[1][23:8]),
-.add3(mult_value[2][23:8]),
-.add4(mult_value[3][23:8]),
-.add5(mult_value[4][23:8]),
-.add6(mult_value[5][23:8]),
-.add7(mult_value[6][23:8]),
-.add8(mult_value[7][23:8]),
-.add9(mult_value[8][23:8]),
-.add10(mult_value[9][23:8]),
-.add11(mult_value[10][23:8]),
-.add12(mult_value[11][23:8]),
-.add13(mult_value[12][23:8]),
-.add14(mult_value[13][23:8]),
-.add15(mult_value[14][23:8]),
-.add16(mult_value[15][23:8]),
-.add17(mult_value[16][23:8]),
-.add18(mult_value[17][23:8]),
-.add19(mult_value[18][23:8]),
-.add20(mult_value[19][23:8]),
-.add21(mult_value[20][23:8]),
-.add22(mult_value[21][23:8]),
-.add23(mult_value[22][23:8]),
-.add24(mult_value[23][23:8]),
-.add25(mult_value[24][23:8]),
-.add26(mult_value[25][23:8]),
-.add27(mult_value[26][23:8]),
-.add28(mult_value[27][23:8]),
-.add29(mult_value[28][23:8]),
-.add30(mult_value[29][23:8]),
-.add31(mult_value[30][23:8]),
-.add32(mult_value[31][23:8]),
 
-.result(fir_d[15:0])
+tree_adder T0(
+.add1(mult_value[0][35:0]),
+.add2(mult_value[1][35:0]),
+.add3(mult_value[2][35:0]),
+.add4(mult_value[3][35:0]),
+.add5(mult_value[4][35:0]),
+.add6(mult_value[5][35:0]),
+.add7(mult_value[6][35:0]),
+.add8(mult_value[7][35:0]),
+.add9(mult_value[8][35:0]),
+.add10(mult_value[9][35:0]),
+.add11(mult_value[10][35:0]),
+.add12(mult_value[11][35:0]),
+.add13(mult_value[12][35:0]),
+.add14(mult_value[13][35:0]),
+.add15(mult_value[14][35:0]),
+.add16(mult_value[15][35:0]),
+.add17(mult_value[16][35:0]),
+.add18(mult_value[17][35:0]),
+.add19(mult_value[18][35:0]),
+.add20(mult_value[19][35:0]),
+.add21(mult_value[20][35:0]),
+.add22(mult_value[21][35:0]),
+.add23(mult_value[22][35:0]),
+.add24(mult_value[23][35:0]),
+.add25(mult_value[24][35:0]),
+.add26(mult_value[25][35:0]),
+.add27(mult_value[26][35:0]),
+.add28(mult_value[27][35:0]),
+.add29(mult_value[28][35:0]),
+.add30(mult_value[29][35:0]),
+.add31(mult_value[30][35:0]),
+.add32(mult_value[31][35:0]),
+
+.result(fir_d)
 
 );
+
 
 
 endmodule

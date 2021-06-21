@@ -35,54 +35,59 @@ add32,
 result
 
 );
-input signed [15:0] add1;
-input signed [15:0] add2;
-input signed [15:0] add3;
-input signed [15:0] add4;
-input signed [15:0] add5;
-input signed [15:0] add6;
-input signed [15:0] add7;
-input signed [15:0] add8;
-input signed [15:0] add9;
-input signed [15:0] add10;
-input signed [15:0] add11;
-input signed [15:0] add12;
-input signed [15:0] add13;
-input signed [15:0] add14;
-input signed [15:0] add15;
-input signed [15:0] add16;
-input signed [15:0] add17;
-input signed [15:0] add18;
-input signed [15:0] add19;
-input signed [15:0] add20;
-input signed [15:0] add21;
-input signed [15:0] add22;
-input signed [15:0] add23;
-input signed [15:0] add24;
-input signed [15:0] add25;
-input signed [15:0] add26;
-input signed [15:0] add27;
-input signed [15:0] add28;
-input signed [15:0] add29;
-input signed [15:0] add30;
-input signed [15:0] add31;
-input signed [15:0] add32;
+input signed [35:0] add1;
+input signed [35:0] add2;
+input signed [35:0] add3;
+input signed [35:0] add4;
+input signed [35:0] add5;
+input signed [35:0] add6;
+input signed [35:0] add7;
+input signed [35:0] add8;
+input signed [35:0] add9;
+input signed [35:0] add10;
+input signed [35:0] add11;
+input signed [35:0] add12;
+input signed [35:0] add13;
+input signed [35:0] add14;
+input signed [35:0] add15;
+input signed [35:0] add16;
+input signed [35:0] add17;
+input signed [35:0] add18;
+input signed [35:0] add19;
+input signed [35:0] add20;
+input signed [35:0] add21;
+input signed [35:0] add22;
+input signed [35:0] add23;
+input signed [35:0] add24;
+input signed [35:0] add25;
+input signed [35:0] add26;
+input signed [35:0] add27;
+input signed [35:0] add28;
+input signed [35:0] add29;
+input signed [35:0] add30;
+input signed [35:0] add31;
+input signed [35:0] add32;
 output reg signed [15:0]  result;
 
-reg signed [15:0] stage2_add[15:0];
+reg signed [35:0] stage2_add[15:0];
 
 
-reg signed [15:0] stage3_add[7:0];
+reg signed [35:0] stage3_add[7:0];
 
 
-reg signed [15:0] stage4_add[3:0];
+reg signed [35:0] stage4_add[3:0];
 
 
-reg signed [15:0] stage5_add[1:0];
+reg signed [35:0] stage5_add[1:0];
+
+reg signed [35:0] result_ ;
+wire signed [35:0]debug ;
 
 integer i;
+assign debug=$signed(add1)+$signed(add2);
 always@(*)
 begin
+	
 	stage2_add[0]=$signed(add1)+$signed(add2);
 	stage2_add[1]=$signed(add3)+$signed(add4);
 	stage2_add[2]=$signed(add5)+$signed(add6);
@@ -101,7 +106,7 @@ begin
 	stage2_add[13]=$signed(add27)+$signed(add28);
 	stage2_add[14]=$signed(add29)+$signed(add30);
 	
-	stage2_add[15]=add30+add31;
+	stage2_add[15]=$signed(add30)+$signed(add31);
 	for (i=0;i<8;i=i+1)
 	begin
 		stage3_add[i]=$signed(stage2_add[i*2])+$signed( stage2_add[(i*2)+1] );
@@ -114,6 +119,8 @@ begin
 	begin
 		stage5_add[i]=$signed(stage4_add[i*2])+$signed( stage4_add[(i*2)+1] );
 	end
+	result_=$signed(stage5_add[0])+$signed(stage5_add[1]);
+	result=result_[31:16];
 	
 end
 
