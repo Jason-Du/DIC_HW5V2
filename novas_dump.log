@@ -23,12 +23,12 @@ HOME=/home/khduh
 PATH=/usr/cad/cadence/MMSIM/cur/tools/dfII/bin:/usr/cad/cadence/MMSIM/cur/tools/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/cadence/INNOVUS/cur/tools/celtic/bin:/usr/cad/cadence/INNOVUS/cur/tools/plato/bin:/usr/cad/cadence/INNOVUS/cur/tools/dfII/bin:/usr/cad/cadence/INNOVUS/cur/tools/bin:/usr/cad/cadence/INNOVUS/cur//tools/tlfUtil/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/usr/cad/cadence/INCISIV/cur/tools/bin/64bit:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/bin/64bit:/usr/cad/cadence/INCISIV/cur/tools/dfII/bin/64bit:/usr/cad/synopsys/vcs/cur/bin:/usr/cad/synopsys/vcs/cur/linux/bin:/usr/cad/synopsys/vcs/cur/linux/util:/usr/cad/synopsys/vcs/cur/linux/flexlm:/usr/cad/synopsys/xa/cur/bin:/usr/cad/synopsys/milkyway/cur/bin/AMD.64:/usr/cad/synopsys/laker/cur/bin:/usr/cad/synopsys/customexplorer/cur/bin:/usr/cad/synopsys/tmax/cur/bin:/usr/cad/synopsys/hspice/cur/hspice/bin:/usr/cad/synopsys/hspice/cur/hspice/GNU/linux64/gcc/bin:/usr/cad/synopsys/hspice/cur/hspice/linux64:/usr/bin:/usr/ucb/bin:/usr/cad/synopsys/verdi/cur/bin:/usr/cad/synopsys/verdi/cur/nLint/bin:/usr/cad/synopsys/icc/cur/amd64/syn/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/cad/synopsys/xa/cur/bin:/usr/cad/synopsys/vcs/cur/bin:/usr/cad/synopsys/vcs/cur/linux/bin:/usr/cad/synopsys/vcs/cur/linux/util:/usr/cad/synopsys/vcs/cur/linux/flexlm:/usr/cad/mentor/Tessent/cur/bin:/usr/cad/mentor/calibre/cur/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 MAIL=/var/spool/mail/khduh
 SHELL=/bin/tcsh
-SSH_CLIENT=140.116.164.42 50370 22
-SSH_CONNECTION=140.116.164.42 50370 140.114.14.14 22
+SSH_CLIENT=140.116.164.42 61057 22
+SSH_CONNECTION=140.116.164.42 61057 140.114.14.14 22
 SSH_TTY=/dev/pts/8
 TERM=xterm
 DISPLAY=localhost:16.0
-XDG_SESSION_ID=8521
+XDG_SESSION_ID=8890
 XDG_RUNTIME_DIR=/run/user/1004
 HOSTTYPE=x86_64-linux
 VENDOR=unknown
@@ -91,9 +91,9 @@ argv[0]=ncverilog
 argv[1]=testfixture1.v
 argv[2]=+access+r
 92 profile - 100
-          CPU/Mem usage: 0.040 sys,  0.050 user,  97.66M sys,  0.00M vm
+          CPU/Mem usage: 0.040 sys,  0.040 user,  97.67M sys,  0.00M vm
 93 VC callback profile - scalar:0 vector:0
-94 Tue Jun 22 02:19:08 2021
+94 Wed Jun 23 03:07:32 2021
 95 pliAppInit
 96 FSDB_GATE is disabled.
 97 Enable Parallel Dumping.
@@ -103,7 +103,7 @@ argv[2]=+access+r
 101 argv[0]: FAS.fsdb
 102 argv[0]: +struct
 103 argv[1]: +mda
-104 argv[2]: (handle)0x54ad5c8 testfixture1.DUT
+104 argv[2]: (handle)0x4093598 testfixture1.DUT
 105 FSDB Dumper for IUS, Release Verdi_Q-2020.03, Linux x86_64/64bit, 02/09/2020
 106 (C) 1996 - 2020 by Synopsys, Inc.
 107 sps_call_fsdbDumpfile at 0 : /home/khduh/DIC_HW5/testfixture1.v(54)
@@ -113,70 +113,70 @@ argv[2]=+access+r
 111 sps_call_fsdbDumpvars at 0 : /home/khduh/DIC_HW5/testfixture1.v(55)
 112 argv[0]: +struct
 113 argv[1]: +mda
-114 argv[2]: (handle)0x54ad5a8 testfixture1.DUT
+114 argv[2]: (handle)0x4093578 testfixture1.DUT
 115 *Verdi* : Begin traversing the scope (testfixture1.DUT), layer (0).
 116 *Verdi* : Enable +struct and +mda dumping.
 117 *Verdi* : End of traversing.
 118 fsdbDumpvars traverse var: profile - 
-          CPU/Mem usage: 0.050 sys,  0.070 user,  185.22M sys,  0.00M vm
+          CPU/Mem usage: 0.040 sys,  0.050 user,  185.23M sys,  0.00M vm
                    incr: 0.000 sys,  0.010 user,  4.46M sys,  0.00M vm
                    accu: 0.000 sys,  0.010 user,  4.46M sys,  0.00M vm
               accu incr: 0.000 sys,  0.010 user,  4.46M sys,  0.00M vm
 
-          Count usage: 729 var,  695 idcode,  695 callback
-                 incr: 729 var,  695 idcode,  695 callback
-                 accu: 729 var,  695 idcode,  695 callback
-            accu incr: 729 var,  695 idcode,  695 callback
+          Count usage: 735 var,  701 idcode,  701 callback
+                 incr: 735 var,  701 idcode,  701 callback
+                 accu: 735 var,  701 idcode,  701 callback
+            accu incr: 735 var,  701 idcode,  701 callback
 119 VC callback profile - scalar:0 vector:0
-120 Tue Jun 22 02:19:09 2021
+120 Wed Jun 23 03:07:32 2021
 121 fsdbDumpvars: profile - 
-          CPU/Mem usage: 0.050 sys,  0.070 user,  186.27M sys,  0.00M vm
+          CPU/Mem usage: 0.040 sys,  0.050 user,  186.28M sys,  0.00M vm
                    incr: 0.000 sys,  0.000 user,  1.05M sys,  0.00M vm
-                   accu: 0.000 sys,  0.010 user,  5.51M sys,  0.00M vm
+                   accu: 0.000 sys,  0.010 user,  5.52M sys,  0.00M vm
               accu incr: 0.000 sys,  0.000 user,  1.05M sys,  0.00M vm
 
-          Count usage: 729 var,  695 idcode,  695 callback
+          Count usage: 735 var,  701 idcode,  701 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 729 var,  695 idcode,  695 callback
+                 accu: 735 var,  701 idcode,  701 callback
             accu incr: 0 var,  0 idcode,  0 callback
-122 VC callback profile - scalar:23 vector:672
-123 Tue Jun 22 02:19:09 2021
+122 VC callback profile - scalar:23 vector:678
+123 Wed Jun 23 03:07:32 2021
 124 sps_call_fsdbDumpvars at 0 : /home/khduh/DIC_HW5/testfixture1.v(56)
 125 *Verdi* : Begin traversing the scopes, layer (0).
 126 *Verdi* : End of traversing.
 127 fsdbDumpvars traverse var: profile - 
-          CPU/Mem usage: 0.050 sys,  0.080 user,  186.40M sys,  0.00M vm
-                   incr: 0.000 sys,  0.010 user,  0.14M sys,  0.00M vm
-                   accu: 0.000 sys,  0.010 user,  0.14M sys,  0.00M vm
-              accu incr: 0.000 sys,  0.010 user,  0.14M sys,  0.00M vm
+          CPU/Mem usage: 0.040 sys,  0.050 user,  186.41M sys,  0.00M vm
+                   incr: 0.000 sys,  0.000 user,  0.14M sys,  0.00M vm
+                   accu: 0.000 sys,  0.000 user,  0.14M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.000 user,  0.14M sys,  0.00M vm
 
-          Count usage: 1198 var,  730 idcode,  730 callback
-                 incr: 469 var,  35 idcode,  35 callback
-                 accu: 469 var,  35 idcode,  35 callback
-            accu incr: 469 var,  35 idcode,  35 callback
-128 VC callback profile - scalar:23 vector:672
-129 Tue Jun 22 02:19:09 2021
+          Count usage: 1210 var,  736 idcode,  736 callback
+                 incr: 475 var,  35 idcode,  35 callback
+                 accu: 475 var,  35 idcode,  35 callback
+            accu incr: 475 var,  35 idcode,  35 callback
+128 VC callback profile - scalar:23 vector:678
+129 Wed Jun 23 03:07:32 2021
 130 fsdbDumpvars: profile - 
-          CPU/Mem usage: 0.050 sys,  0.080 user,  186.40M sys,  0.00M vm
+          CPU/Mem usage: 0.040 sys,  0.050 user,  186.41M sys,  0.00M vm
                    incr: 0.000 sys,  0.000 user,  0.00M sys,  0.00M vm
-                   accu: 0.000 sys,  0.010 user,  0.14M sys,  0.00M vm
+                   accu: 0.000 sys,  0.000 user,  0.14M sys,  0.00M vm
               accu incr: 0.000 sys,  0.000 user,  0.00M sys,  0.00M vm
 
-          Count usage: 1198 var,  730 idcode,  730 callback
+          Count usage: 1210 var,  736 idcode,  736 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 469 var,  35 idcode,  35 callback
+                 accu: 475 var,  35 idcode,  35 callback
             accu incr: 0 var,  0 idcode,  0 callback
-131 VC callback profile - scalar:53 vector:1056
-132 Tue Jun 22 02:19:09 2021
-133 End of simulation at 4027500
-134 VC callback profile - scalar:4216 vector:486764
-135 Tue Jun 22 02:19:09 2021
+131 VC callback profile - scalar:53 vector:1068
+132 Wed Jun 23 03:07:32 2021
+133 End of simulation at 392500
+134 VC callback profile - scalar:440 vector:61889
+135 Wed Jun 23 03:07:32 2021
 136 Begin FSDB profile info:
-137 FSDB Writer : bc1(4216) bcn(486764) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.219140) io wait(0.000000) theadpool wait(0.000000)
+137 FSDB Writer : bc1(440) bcn(61889) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.190209) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
 138 End FSDB profile info
-139 Parallel profile    -  Flush:4 Expand:0 ProduceWait:0 ConsumerWait:3 BlockUsed:6
-140                        ProduceTime:0.365742190 ConsumerTime:0.072441130 Buffer:64MB
+139 Parallel profile    -  Flush:4 Expand:0 ProduceWait:0 ConsumerWait:0 BlockUsed:1
+140                        ProduceTime:0.179890447 ConsumerTime:0.000000000 Buffer:64MB
 141 SimExit
 142 Sim process exit

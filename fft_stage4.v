@@ -70,40 +70,44 @@ module fft_stage4(
 	output reg  [31:0] stage4_data14_out;
 	output reg  [31:0] stage4_data15_out;
 	
-
-	reg signed [31:0] stage4_data1_out_real;
-	reg signed [31:0] stage4_data2_out_real;
-	reg signed [31:0] stage4_data3_out_real;
-	reg signed [31:0] stage4_data4_out_real;
-	reg signed [31:0] stage4_data5_out_real;
-	reg signed [31:0] stage4_data6_out_real;
-	reg signed [31:0] stage4_data7_out_real;
-	reg signed [31:0] stage4_data8_out_real;
-	reg signed [31:0] stage4_data9_out_real;
-	reg signed [31:0] stage4_data10_out_real;
-	reg signed [31:0] stage4_data11_out_real;
-	reg signed [31:0] stage4_data12_out_real;
-	reg signed [31:0] stage4_data13_out_real;
-	reg signed [31:0] stage4_data14_out_real;
-	reg signed [31:0] stage4_data15_out_real;
-	reg signed [31:0] stage4_data0_out_real;
 	
-	reg signed [31:0] stage4_data1_out_img;
-	reg signed [31:0] stage4_data2_out_img;
-	reg signed [31:0] stage4_data3_out_img;
-	reg signed [31:0] stage4_data4_out_img;
-	reg signed [31:0] stage4_data5_out_img;
-	reg signed [31:0] stage4_data6_out_img;
-	reg signed [31:0] stage4_data7_out_img;
-	reg signed [31:0] stage4_data8_out_img;
-	reg signed [31:0] stage4_data9_out_img;
-	reg signed [31:0] stage4_data10_out_img;
-	reg signed [31:0] stage4_data11_out_img;
-	reg signed [31:0] stage4_data12_out_img;
-	reg signed [31:0] stage4_data13_out_img;
-	reg signed [31:0] stage4_data14_out_img;
-	reg signed [31:0] stage4_data15_out_img;
-	reg signed [31:0] stage4_data0_out_img;
+	
+	reg signed [15:0] stage4_data0_out_real;
+	reg signed [15:0] stage4_data1_out_real;
+	reg signed [15:0] stage4_data2_out_real;
+	reg signed [15:0] stage4_data3_out_real;
+	reg signed [15:0] stage4_data4_out_real;
+	reg signed [15:0] stage4_data5_out_real;
+	reg signed [15:0] stage4_data6_out_real;
+	reg signed [15:0] stage4_data7_out_real;
+	reg signed [15:0] stage4_data8_out_real;
+	reg signed [15:0] stage4_data9_out_real;
+	reg signed [15:0] stage4_data10_out_real;
+	reg signed [15:0] stage4_data11_out_real;
+	reg signed [15:0] stage4_data12_out_real;
+	reg signed [15:0] stage4_data13_out_real;
+	reg signed [15:0] stage4_data14_out_real;
+	reg signed [15:0] stage4_data15_out_real;
+	
+	
+	
+	reg signed [15:0] stage4_data0_out_img;
+	reg signed [15:0] stage4_data1_out_img;
+	reg signed [15:0] stage4_data2_out_img;
+	reg signed [15:0] stage4_data3_out_img;
+	reg signed [15:0] stage4_data4_out_img;
+	reg signed [15:0] stage4_data5_out_img;
+	reg signed [15:0] stage4_data6_out_img;
+	reg signed [15:0] stage4_data7_out_img;
+	reg signed [15:0] stage4_data8_out_img;
+	reg signed [15:0] stage4_data9_out_img;
+	reg signed [15:0] stage4_data10_out_img;
+	reg signed [15:0] stage4_data11_out_img;
+	reg signed [15:0] stage4_data12_out_img;
+	reg signed [15:0] stage4_data13_out_img;
+	reg signed [15:0] stage4_data14_out_img;
+	reg signed [15:0] stage4_data15_out_img;
+	
 		
 		
 		
@@ -168,20 +172,20 @@ module fft_stage4(
 		 
 		 
 		 stage4_data0_out={stage4_data0_out_real,stage4_data0_out_img};
-		 stage4_data1_out={stage4_data1_out_real,stage4_data1_out_img};
-		 stage4_data2_out={stage4_data2_out_real,stage4_data2_out_img};
-		 stage4_data3_out={stage4_data3_out_real,stage4_data3_out_img};
-		 stage4_data4_out={stage4_data4_out_real,stage4_data4_out_img};
-		 stage4_data5_out={stage4_data5_out_real,stage4_data5_out_img};
+		 stage4_data8_out={stage4_data1_out_real,stage4_data1_out_img};
+		 stage4_data4_out={stage4_data2_out_real,stage4_data2_out_img};
+		 stage4_data12_out={stage4_data3_out_real,stage4_data3_out_img};
+		 stage4_data2_out={stage4_data4_out_real,stage4_data4_out_img};
+		 stage4_data10_out={stage4_data5_out_real,stage4_data5_out_img};
 		 stage4_data6_out={stage4_data6_out_real,stage4_data6_out_img};
-		 stage4_data7_out={stage4_data7_out_real,stage4_data7_out_img};
-		 stage4_data8_out={stage4_data8_out_real,stage4_data8_out_img};
+		 stage4_data14_out={stage4_data7_out_real,stage4_data7_out_img};
+		 stage4_data1_out={stage4_data8_out_real,stage4_data8_out_img};
 		 stage4_data9_out={stage4_data9_out_real,stage4_data9_out_img};
-		 stage4_data10_out={stage4_data10_out_real,stage4_data10_out_img};
-		 stage4_data11_out={stage4_data11_out_real,stage4_data11_out_img};
-		 stage4_data12_out={stage4_data12_out_real,stage4_data12_out_img};
-		 stage4_data13_out={stage4_data13_out_real,stage4_data13_out_img};
-		 stage4_data14_out={stage4_data14_out_real,stage4_data14_out_img};
+		 stage4_data5_out={stage4_data10_out_real,stage4_data10_out_img};
+		 stage4_data13_out={stage4_data11_out_real,stage4_data11_out_img};
+		 stage4_data3_out={stage4_data12_out_real,stage4_data12_out_img};
+		 stage4_data11_out={stage4_data13_out_real,stage4_data13_out_img};
+		 stage4_data7_out={stage4_data14_out_real,stage4_data14_out_img};
 		 stage4_data15_out={stage4_data15_out_real,stage4_data15_out_img};
 		
 	

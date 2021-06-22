@@ -16,6 +16,8 @@ fft_stage3.v
 /home/khduh/DIC_HW5/fft_stage3.v
 fft_stage4.v
 /home/khduh/DIC_HW5/fft_stage4.v
+./counter.v
+/home/khduh/DIC_HW5/counter.v
 analyze.v
 /home/khduh/DIC_HW5/analyze.v
 counter_4.v
