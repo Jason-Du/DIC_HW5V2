@@ -1,8 +1,78 @@
 ncverilog(64): 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	ncverilog	15.20-s039: Started on Jun 23, 2021 at 03:07:29 CST
+TOOL:	ncverilog	15.20-s039: Started on Jun 23, 2021 at 19:58:55 CST
 ncverilog
 	testfixture1.v
 	+access+r
+file: testfixture1.v
+	module worklib.counter:v
+		errors: 0, warnings: 0
+	module worklib.tree_adder:v
+		errors: 0, warnings: 0
+	module worklib.fir:v
+		errors: 0, warnings: 0
+	module worklib.fft_stage1:v
+		errors: 0, warnings: 0
+	module worklib.fft_stage2:v
+		errors: 0, warnings: 0
+	module worklib.fft_stage3:v
+		errors: 0, warnings: 0
+	module worklib.fft_stage4:v
+		errors: 0, warnings: 0
+module counter(
+             |
+ncvlog: *W,RECOME (./counter.v,1|13): recompiling design unit worklib.counter:v.
+	First compiled from line 1 of counter.v.
+(`include file: ./counter.v line 1, `include file: fft.v line 5, `include file: FAS.v line 2, file: testfixture1.v line 8)
+	module worklib.counter:v
+		errors: 0, warnings: 1
+	module worklib.fft:v
+		errors: 0, warnings: 0
+	module worklib.counter_4:v
+		errors: 0, warnings: 0
+	module worklib.analyze:v
+		errors: 0, warnings: 0
+	module worklib.FAS:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.FAS:v <0x6d7728f4>
+			streams:   1, words:   187
+		worklib.analyze:v <0x08a398b2>
+			streams:   8, words: 14198
+		worklib.counter:v <0x3e24fd80>
+			streams:   3, words:   899
+		worklib.counter_4:v <0x2077550a>
+			streams:   3, words:   875
+		worklib.fft:v <0x17f90088>
+			streams:  70, words: 46031
+		worklib.fft_stage1:v <0x286f89ce>
+			streams:   1, words:  9334
+		worklib.fft_stage2:v <0x2297098a>
+			streams:   1, words: 10841
+		worklib.fft_stage3:v <0x75f1efdd>
+			streams:   1, words:  7577
+		worklib.fft_stage4:v <0x4904fb7d>
+			streams:   1, words:  8246
+		worklib.fir:v <0x57f17f96>
+			streams:  40, words: 50194
+		worklib.tree_adder:v <0x6bc3bbbc>
+			streams:   2, words:  8919
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                 13      12
+		Registers:              308     306
+		Scalar wires:            13       -
+		Vectored wires:         184       -
+		Always blocks:           30      28
+		Initial blocks:           9       9
+		Cont. assignments:        2       2
+		Pseudo assignments:      98      98
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.testfixture1:v
 Loading snapshot worklib.testfixture1:v .................... Done
 *Verdi* Loading libsscore_ius152.so
 ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
@@ -16,25 +86,65 @@ FSDB Dumper for IUS, Release Verdi_Q-2020.03, Linux x86_64/64bit, 02/09/2020
 *Verdi* : End of traversing.
 *Verdi* : Begin traversing the scopes, layer (0).
 *Verdi* : End of traversing.
-ERROR at FFT  ppoint number = 0: The real response output 007e0000 != expectd 00850000 
+ERROR at FFT  ppoint number = 1: The real response output ffd50000 != expectd 05a8faaa 
 -----------------------------------------------------
-ERROR at FFT  ppoint number = 1: The real response output 05a9faa2 != expectd 05a8faaa 
+ERROR at FFT  ppoint number = 2: The real response output ffcd0025 != expectd ff970075 
 -----------------------------------------------------
-ERROR at FFT  ppoint number =15: The real response output 05ad055d != expectd 05a80556 
+ERROR at FFT  ppoint number = 3: The real response output ffcd0fda != expectd ffc1003a 
 -----------------------------------------------------
-ERROR at 'ANALYSIS Stage', the freq signal output 14 !=expect  1 or 15 
+ERROR at FFT  ppoint number = 4: The real response output ff970076 != expectd ffcf0026 
 -----------------------------------------------------
-ERROR at FFT  ppoint number =16: The real response output 00c20000 != expectd 00c80000 
+ERROR at FFT  ppoint number = 5: The real response output ffd40ff0 != expectd ffd30017 
 -----------------------------------------------------
-ERROR at FFT  ppoint number =17: The real response output 0772fd24 != expectd 0771fd2b 
+ERROR at FFT  ppoint number = 7: The real response output ff970f89 != expectd ffd50006 
 -----------------------------------------------------
-ERROR at FFT  ppoint number =18: The real response output ff91003e != expectd ff95003e 
+ERROR at FFT  ppoint number = 8: The real response output 05ab0aa3 != expectd ffd50000 
 -----------------------------------------------------
-ERROR at FFT  ppoint number =31: The real response output 077602dc != expectd 077102d5 
+ERROR at FFT  ppoint number = 9: The real response output ffd50ff8 != expectd ffd5fffa 
 -----------------------------------------------------
-ERROR at FIR cycle  43: The real response output ffb2 != expectd ffb4 
+ERROR at FFT  ppoint number =10: The real response output ffd2f018 != expectd ffd6fff1 
 -----------------------------------------------------
-Simulation complete via $finish(1) at time 3925 NS + 0
+ERROR at FFT  ppoint number =11: The real response output ffc2ffc3 != expectd ffd3ffe9 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =12: The real response output ffc2f03c != expectd ffcfffda 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =13: The real response output ffd2ffe7 != expectd ffc1ffc6 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =14: The real response output ffd5f007 != expectd ff97ff8b 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =15: The real response output 05acf55c != expectd 05a80556 
+-----------------------------------------------------
+ERROR at 'ANALYSIS Stage', the freq signal output  4 !=expect  1 or 15 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =17: The real response output ffe30000 != expectd 0771fd2b 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =18: The real response output ffd90014 != expectd ff95003e 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =19: The real response output ffd90fec != expectd ffcb001f 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =20: The real response output ff93f03f != expectd ffdb0015 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =21: The real response output ffe2fff7 != expectd ffe1000d 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =22: The real response output ffe2f008 != expectd ffe20006 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =23: The real response output ff93ffc0 != expectd ffe50004 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =24: The real response output 0775fd25 != expectd ffe60000 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =26: The real response output ffdf000d != expectd ffe2fffa 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =27: The real response output ffca0fe0 != expectd ffe1fff3 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =28: The real response output ffcaf01f != expectd ffdbffeb 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =29: The real response output ffdffff2 != expectd ffcbffe1 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =30: The real response output ffe30003 != expectd ff95ffc2 
+-----------------------------------------------------
+ERROR at FFT  ppoint number =31: The real response output 077602da != expectd 077102d5 
+-----------------------------------------------------
+Simulation complete via $finish(1) at time 3875 NS + 0
 ./testfixture1.v:195 			$finish;
 ncsim> exit
-TOOL:	ncverilog	15.20-s039: Exiting on Jun 23, 2021 at 03:07:33 CST  (total: 00:00:04)
+TOOL:	ncverilog	15.20-s039: Exiting on Jun 23, 2021 at 19:59:00 CST  (total: 00:00:05)

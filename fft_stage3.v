@@ -159,25 +159,25 @@ module fft_stage3(
 		 stage3_data1_out_img  = $signed(stage3_data1_in[15:0])  + $signed(stage3_data3_in[15:0]);
 		 stage3_data2_out_img  = $signed(stage3_data0_in[15:0])  - $signed(stage3_data2_in[15:0]);
 		 stage3_data3_out_img_inv=$signed(stage3_data1_in[31:16]) - $signed(stage3_data3_in[31:16]);
-		 stage3_data3_out_img  =$signed(~stage3_data3_out_img_inv)+$signed(48'h0000_0100_0000);
+		 stage3_data3_out_img  =$signed(~stage3_data3_out_img_inv)+$signed(48'h0000_1000_0000);
 		 
 		 stage3_data4_out_img  = $signed(stage3_data4_in[15:0])  + $signed(stage3_data6_in[15:0]);
 		 stage3_data5_out_img  = $signed(stage3_data5_in[15:0])  + $signed(stage3_data7_in[15:0]);
 		 stage3_data6_out_img  = $signed(stage3_data4_in[15:0])  - $signed(stage3_data6_in[15:0]);
 		 stage3_data7_out_img_inv=$signed(stage3_data5_in[31:16]) - $signed(stage3_data7_in[31:16]);
-		 stage3_data7_out_img  = $signed(~stage3_data7_out_img_inv)+$signed(48'h0000_0100_0000);
+		 stage3_data7_out_img  = $signed(~stage3_data7_out_img_inv)+$signed(48'h0000_1000_0000);
 		 
 		 stage3_data8_out_img  = $signed(stage3_data8_in[15:0])  + $signed(stage3_data10_in[15:0]);
 		 stage3_data9_out_img  = $signed(stage3_data9_in[15:0])  + $signed(stage3_data11_in[15:0]);
 		 stage3_data10_out_img = $signed(stage3_data8_in[15:0])  - $signed(stage3_data10_in[15:0]);
 		 stage3_data11_out_img_inv=$signed(stage3_data9_in[31:16]) - $signed(stage3_data11_in[31:16]);
-		 stage3_data11_out_img = $signed(~stage3_data11_out_img_inv)+$signed(48'h0000_0100_0000);
+		 stage3_data11_out_img = $signed(~stage3_data11_out_img_inv)+$signed(48'h0000_1000_0000);
 		 
 		 stage3_data12_out_img = $signed(stage3_data12_in[15:0])  + $signed(stage3_data14_in[15:0]);
 		 stage3_data13_out_img = $signed(stage3_data13_in[15:0])  + $signed(stage3_data15_in[15:0]);
 		 stage3_data14_out_img = $signed(stage3_data12_in[15:0])  - $signed(stage3_data14_in[15:0]);
 		 stage3_data15_out_img_inv=$signed(stage3_data13_in[31:16]) - $signed(stage3_data15_in[31:16]);
-		 stage3_data15_out_img = $signed(~stage3_data15_out_img_inv)+$signed(48'h0000_0100_0000);
+		 stage3_data15_out_img = $signed(~stage3_data15_out_img_inv)+$signed(48'h0000_1000_0000);
 		 
 		 
 		 

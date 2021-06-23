@@ -107,6 +107,7 @@ module analyze(
 				NS=fft_valid?COMPARE:IDLE;
 				done=1'b0;
 				ANA_C0_clear=1'b1;
+				ANA_C0_keep=1'b0;
 				compare_V1=fft_d0;
 				compare_V2=fft_d1;
 				freq=(mult1_value>mult2_value)?4'd0:4'd1;
@@ -131,18 +132,19 @@ module analyze(
 			end
 			COMPARE:
 			begin
-				NS=(ANA_C0_count==4'd14)?IDLE:COMPARE;
-				done=(ANA_C0_count==10'd14)?1'b1:1'b0;
+				NS=(ANA_C0_count==4'd13)?IDLE:COMPARE;
+				done=(ANA_C0_count==10'd13)?1'b1:1'b0;
 				ANA_C0_clear=(ANA_C0_count==10'd14)?1'b1:1'b0;
-				compare_V1=local_reg_resigter_out[ANA_C0_count+4'd1];
-				compare_V2=result_resigter_out;
-				freq=(mult1_value>mult2_value)?ANA_C0_count+4'd1:freq_register_out;
+				ANA_C0_keep=1'b0;
+				compare_V1=local_reg_resigter_out[freq];
+				compare_V2=local_reg_resigter_out[ANA_C0_count+4'd2];
+				freq=(result_resigter_out>mult2_value)?freq_register_out:ANA_C0_count+4'd2;
 				result_resigter_in=(mult1_value>mult2_value)?mult1_value:mult2_value;
 				
-				local_reg_resigter_in[0]=local_reg_resigter_out[15];
-				for(i=0;i<14;i=i+1)
+			//	local_reg_resigter_in[0]=local_reg_resigter_out[15];
+				for(i=0;i<16;i=i+1)
 				begin
-					local_reg_resigter_in[i+1]=local_reg_resigter_out[i];
+					local_reg_resigter_in[+1]=local_reg_resigter_out[i];
 				end
 			end
 		endcase
