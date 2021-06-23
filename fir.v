@@ -1,6 +1,6 @@
-`include "counter.v"
+/*`include "counter.v"
 `include "tree_adder.v"
-
+*/
 
 module fir(
 clk,

@@ -5,7 +5,7 @@
 
 `define fir_fail_limit 48
 `define fft_fail_limit 48
-`include "FAS.v"
+//`include "FAS.v"
 
 
 module testfixture1;

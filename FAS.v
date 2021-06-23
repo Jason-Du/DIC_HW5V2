@@ -1,7 +1,8 @@
+/*
 `include "fir.v"
 `include "fft.v"
 `include "analyze.v"
-
+*/
 module  FAS (
 		data_valid,// fir
 		data, // fir
