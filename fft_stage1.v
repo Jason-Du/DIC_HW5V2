@@ -83,7 +83,8 @@ module fft_stage1(
 	reg signed [47:0] stage1_data9_out_real;
 	reg signed [47:0] stage1_data10_out_real;
 	reg signed [47:0] stage1_data11_out_real;
-	reg signed [47:0] stage1_data12_out_real;
+	reg signed [15:0] stage1_data12_out_real_;
+	reg signed [15:0] stage1_data12_out_real;
 	reg signed [47:0] stage1_data13_out_real;
 	reg signed [47:0] stage1_data14_out_real;
 	reg signed [47:0] stage1_data15_out_real;
@@ -100,7 +101,8 @@ module fft_stage1(
 	reg signed [47:0] stage1_data9_out_img;
 	reg signed [47:0] stage1_data10_out_img;
 	reg signed [47:0] stage1_data11_out_img;
-	reg signed [47:0] stage1_data12_out_img;
+	reg signed [15:0] stage1_data12_out_img_;
+	reg signed [15:0] stage1_data12_out_img;
 	reg signed [47:0] stage1_data13_out_img;
 	reg signed [47:0] stage1_data14_out_img;
 	reg signed [47:0] stage1_data15_out_img;
@@ -143,7 +145,8 @@ module fft_stage1(
 		 stage1_data9_out_real  = $signed(W1_real) * ( $signed(stage1_data1_in[31:16]) - $signed(stage1_data9_in[31:16])  );
 		 stage1_data10_out_real = $signed(W2_real) * ( $signed(stage1_data2_in[31:16]) - $signed(stage1_data10_in[31:16]) );
 		 stage1_data11_out_real = $signed(W3_real) * ( $signed(stage1_data3_in[31:16]) - $signed(stage1_data11_in[31:16]) );
-		 stage1_data12_out_real = $signed(W4_real) * ( $signed(stage1_data4_in[31:16]) - $signed(stage1_data12_in[31:16]) );
+		 stage1_data12_out_real_= $signed(stage1_data4_in[31:16]) - $signed(stage1_data12_in[31:16]);
+		 stage1_data12_out_real = $signed(~stage1_data12_out_real_)+$signed(16'h1000);
 		 stage1_data13_out_real = $signed(W5_real) * ( $signed(stage1_data5_in[31:16]) - $signed(stage1_data13_in[31:16]) );
 		 stage1_data14_out_real = $signed(W6_real) * ( $signed(stage1_data6_in[31:16]) - $signed(stage1_data14_in[31:16]) );
 		 stage1_data15_out_real = $signed(W7_real) * ( $signed(stage1_data7_in[31:16]) - $signed(stage1_data15_in[31:16]) );
@@ -161,7 +164,8 @@ module fft_stage1(
 		 stage1_data9_out_img  = $signed(W1_img) * ( $signed(stage1_data1_in[31:16]) - $signed(stage1_data9_in[31:16]) );
 		 stage1_data10_out_img = $signed(W2_img) * ( $signed(stage1_data2_in[31:16]) - $signed(stage1_data10_in[31:16]) );
 		 stage1_data11_out_img = $signed(W3_img) * ( $signed(stage1_data3_in[31:16]) - $signed(stage1_data11_in[31:16]) );
-		 stage1_data12_out_img = $signed(W4_img) * ( $signed(stage1_data4_in[31:16]) - $signed(stage1_data12_in[31:16]) );
+		 stage1_data12_out_img_= $signed(stage1_data4_in[31:16]) - $signed(stage1_data12_in[31:16]);
+		 stage1_data12_out_img = $signed(~stage1_data12_out_img_)+$signed(16'h1000);
 		 stage1_data13_out_img = $signed(W5_img) * ( $signed(stage1_data5_in[31:16]) - $signed(stage1_data13_in[31:16]) );
 		 stage1_data14_out_img = $signed(W6_img) * ( $signed(stage1_data6_in[31:16]) - $signed(stage1_data14_in[31:16]) );
 		 stage1_data15_out_img = $signed(W7_img) * ( $signed(stage1_data7_in[31:16]) - $signed(stage1_data15_in[31:16]) );
@@ -181,7 +185,7 @@ module fft_stage1(
 		 stage1_data9_out={stage1_data9_out_real[31:16],stage1_data9_out_img[31:16]};
 		 stage1_data10_out={stage1_data10_out_real[31:16],stage1_data10_out_img[31:16]};
 		 stage1_data11_out={stage1_data11_out_real[31:16],stage1_data11_out_img[31:16]};
-		 stage1_data12_out={stage1_data12_out_real[31:16],stage1_data12_out_img[31:16]};
+		 stage1_data12_out={stage1_data12_out_real,stage1_data12_out_img};
 		 stage1_data13_out={stage1_data13_out_real[31:16],stage1_data13_out_img[31:16]};
 		 stage1_data14_out={stage1_data14_out_real[31:16],stage1_data14_out_img[31:16]};
 		 stage1_data15_out={stage1_data15_out_real[31:16],stage1_data15_out_img[31:16]};
