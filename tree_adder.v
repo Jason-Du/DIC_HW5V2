@@ -120,7 +120,7 @@ begin
 		stage5_add[i]=$signed(stage4_add[i*2])+$signed( stage4_add[(i*2)+1] );
 	end
 	result_=$signed(stage5_add[0])+$signed(stage5_add[1]);
-	result=result_[31:16];
+	result=result_[27:12];
 	
 end
 
