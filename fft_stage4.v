@@ -172,20 +172,20 @@ module fft_stage4(
 		 
 		 
 		stage4_data0_out={ {4{ stage4_data0_out_real[15]}} , stage4_data0_out_real[15:4] , {4{ stage4_data0_out_img[15]}} , stage4_data0_out_img[15:4]};
-		stage4_data1_out={ {4{ stage4_data1_out_real[15]}} , stage4_data1_out_real[15:4] , {4{ stage4_data1_out_img[15]}} , stage4_data1_out_img[15:4]};
-		stage4_data2_out={ {4{ stage4_data2_out_real[15]}} , stage4_data2_out_real[15:4] , {4{ stage4_data2_out_img[15]}} , stage4_data2_out_img[15:4]};
-		stage4_data3_out={ {4{ stage4_data3_out_real[15]}} , stage4_data3_out_real[15:4] , {4{ stage4_data3_out_img[15]}} , stage4_data3_out_img[15:4]};
-		stage4_data4_out={ {4{ stage4_data4_out_real[15]}} , stage4_data4_out_real[15:4] , {4{ stage4_data4_out_img[15]}} , stage4_data4_out_img[15:4]};
-		stage4_data5_out={ {4{ stage4_data5_out_real[15]}} , stage4_data5_out_real[15:4] , {4{ stage4_data5_out_img[15]}} , stage4_data5_out_img[15:4]};
+		stage4_data8_out={ {4{ stage4_data1_out_real[15]}} , stage4_data1_out_real[15:4] , {4{ stage4_data1_out_img[15]}} , stage4_data1_out_img[15:4]};
+		stage4_data4_out={ {4{ stage4_data2_out_real[15]}} , stage4_data2_out_real[15:4] , {4{ stage4_data2_out_img[15]}} , stage4_data2_out_img[15:4]};
+		stage4_data12_out={ {4{ stage4_data3_out_real[15]}} , stage4_data3_out_real[15:4] , {4{ stage4_data3_out_img[15]}} , stage4_data3_out_img[15:4]};
+		stage4_data2_out={ {4{ stage4_data4_out_real[15]}} , stage4_data4_out_real[15:4] , {4{ stage4_data4_out_img[15]}} , stage4_data4_out_img[15:4]};
+		stage4_data10_out={ {4{ stage4_data5_out_real[15]}} , stage4_data5_out_real[15:4] , {4{ stage4_data5_out_img[15]}} , stage4_data5_out_img[15:4]};
 		stage4_data6_out={ {4{ stage4_data6_out_real[15]}} , stage4_data6_out_real[15:4] , {4{ stage4_data6_out_img[15]}} , stage4_data6_out_img[15:4]};
-		stage4_data7_out={ {4{ stage4_data7_out_real[15]}} , stage4_data7_out_real[15:4] , {4{ stage4_data7_out_img[15]}} , stage4_data7_out_img[15:4]};
-		stage4_data8_out={ {4{ stage4_data8_out_real[15]}} , stage4_data8_out_real[15:4] , {4{ stage4_data8_out_img[15]}} , stage4_data8_out_img[15:4]};
+		stage4_data14_out={ {4{ stage4_data7_out_real[15]}} , stage4_data7_out_real[15:4] , {4{ stage4_data7_out_img[15]}} , stage4_data7_out_img[15:4]};
+		stage4_data1_out={ {4{ stage4_data8_out_real[15]}} , stage4_data8_out_real[15:4] , {4{ stage4_data8_out_img[15]}} , stage4_data8_out_img[15:4]};
 		stage4_data9_out={ {4{ stage4_data9_out_real[15]}} , stage4_data9_out_real[15:4] , {4{ stage4_data9_out_img[15]}} , stage4_data9_out_img[15:4]};
-		stage4_data10_out={ {4{ stage4_data10_out_real[15]}} , stage4_data10_out_real[15:4] , {4{ stage4_data10_out_img[15]}} , stage4_data10_out_img[15:4]};
-		stage4_data11_out={ {4{ stage4_data11_out_real[15]}} , stage4_data11_out_real[15:4] , {4{ stage4_data11_out_img[15]}} , stage4_data11_out_img[15:4]};
-		stage4_data12_out={ {4{ stage4_data12_out_real[15]}} , stage4_data12_out_real[15:4] , {4{ stage4_data12_out_img[15]}} , stage4_data12_out_img[15:4]};
-		stage4_data13_out={ {4{ stage4_data13_out_real[15]}} , stage4_data13_out_real[15:4] , {4{ stage4_data13_out_img[15]}} , stage4_data13_out_img[15:4]};
-		stage4_data14_out={ {4{ stage4_data14_out_real[15]}} , stage4_data14_out_real[15:4] , {4{ stage4_data14_out_img[15]}} , stage4_data14_out_img[15:4]};
+		stage4_data5_out={ {4{ stage4_data10_out_real[15]}} , stage4_data10_out_real[15:4] , {4{ stage4_data10_out_img[15]}} , stage4_data10_out_img[15:4]};
+		stage4_data13_out={ {4{ stage4_data11_out_real[15]}} , stage4_data11_out_real[15:4] , {4{ stage4_data11_out_img[15]}} , stage4_data11_out_img[15:4]};
+		stage4_data3_out={ {4{ stage4_data12_out_real[15]}} , stage4_data12_out_real[15:4] , {4{ stage4_data12_out_img[15]}} , stage4_data12_out_img[15:4]};
+		stage4_data11_out={ {4{ stage4_data13_out_real[15]}} , stage4_data13_out_real[15:4] , {4{ stage4_data13_out_img[15]}} , stage4_data13_out_img[15:4]};
+		stage4_data7_out={ {4{ stage4_data14_out_real[15]}} , stage4_data14_out_real[15:4] , {4{ stage4_data14_out_img[15]}} , stage4_data14_out_img[15:4]};
 		stage4_data15_out={ {4{ stage4_data15_out_real[15]}} , stage4_data15_out_real[15:4] , {4{ stage4_data15_out_img[15]}} , stage4_data15_out_img[15:4]};
 						
 		 /*stage4_data8_out={stage4_data1_out_real,stage4_data1_out_img};
